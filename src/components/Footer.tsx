@@ -24,12 +24,6 @@ export default function Footer() {
         <div className="py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <img
-              src="/background-removed-Adexa_Logo.png"
-              alt="Adexa Sports"
-              className="h-10 w-auto object-contain mb-4"
-              style={{ filter: 'brightness(0) invert(1)' }}
-            />
             <p className="text-white/50 text-sm leading-relaxed mb-5">
               Building structured and professionally managed sports programs for schools across India.
             </p>
@@ -105,17 +99,17 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={14} className="text-primary-400 flex-shrink-0" />
-                <a href="tel:+919826611105" className="text-white/50 hover:text-primary-400 text-sm transition-colors">
+                <a href="tel:+919826611105" title="Call +91 9826611105" className="text-white/50 hover:text-primary-400 text-sm transition-colors">
                   +91 9826611105
                 </a>
               </div>
               <div className="flex items-start gap-3">
                 <Mail size={14} className="text-primary-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <a href="mailto:info@adexasports.com" className="text-white/50 hover:text-primary-400 text-sm transition-colors block">
+                  <a href="mailto:info@adexasports.com" title="Email info@adexasports.com" className="text-white/50 hover:text-primary-400 text-sm transition-colors block">
                     info@adexasports.com
                   </a>
-                  <a href="mailto:careers@adexasports.com" className="text-white/30 hover:text-primary-400 text-xs transition-colors">
+                  <a href="mailto:careers@adexasports.com" title="Email careers@adexasports.com" className="text-white/30 hover:text-primary-400 text-xs transition-colors">
                     careers@adexasports.com
                   </a>
                 </div>

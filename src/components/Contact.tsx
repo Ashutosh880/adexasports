@@ -57,7 +57,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-bold text-dark-900 mb-1 text-sm">Call Us</div>
-                  <a href="tel:+919826611105" className="text-primary-500 font-semibold text-sm hover:underline">
+                  <a href="tel:+919826611105" title="Call +91 9826611105" className="text-primary-500 font-semibold text-sm hover:underline">
                     +91 9826611105
                   </a>
                 </div>
@@ -71,10 +71,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="font-bold text-dark-900 mb-1 text-sm">Email Us</div>
-                  <a href="mailto:info@adexasports.com" className="text-primary-500 font-semibold text-sm hover:underline block mb-1">
+                  <a href="mailto:info@adexasports.com" title="Email info@adexasports.com" className="text-primary-500 font-semibold text-sm hover:underline block mb-1">
                     info@adexasports.com
                   </a>
-                  <a href="mailto:careers@adexasports.com" className="text-neutral-500 text-xs hover:text-primary-500 transition-colors">
+                  <a href="mailto:careers@adexasports.com" title="Email careers@adexasports.com" className="text-neutral-500 text-xs hover:text-primary-500 transition-colors">
                     careers@adexasports.com
                   </a>
                 </div>
