@@ -49,11 +49,11 @@ function App() {
       <Hero />
       <TrustSection />
       <About />
+      <Leadership />
       <Offerings />
       <WhyAdexa />
       <Benefits />
       <Process />
-      <Leadership />
       <Careers />
       <Contact />
       <Footer />

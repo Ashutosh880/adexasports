@@ -8,31 +8,33 @@ const achievements = [
 
 const advisors = [
   {
-    name: 'Deepak',
+    name: 'Mr. Deepak Yadav',
     title: 'Founder & Head of Operations',
     icon: Briefcase,
     color: 'bg-primary-500',
-    bio: 'Deepak leads Adexa Sports\' operational framework, driving strategic partnerships with educational institutions across Madhya Pradesh. With a strong background in business development and youth ecosystem building, he oversees program design, school outreach, and organizational growth. His vision is to make quality structured sports programs accessible to every school, regardless of size or resources.',
+    bio: 'Deepak leads Adexa Sports’ operational framework and strategic partnerships with educational institutions across Madhya Pradesh. An engineer by profession with strong exposure to Kho-Kho and multiple sports disciplines, he brings a structured and practical understanding of school-level sports ecosystems and athlete development pathways. His experience helps shape the execution of programs that bridge school sports with structured training systems.',
     tags: ['Operations', 'Strategy', 'Partnerships'],
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop',
+    image: '/deepak.jpeg',
   },
   {
-    name: 'Mr. Jayesh',
-    title: 'Advisor',
+    name: 'Mr. Jayesh Acharya',
+    title: 'Chief Sports Advisor',
+    subtitle: 'Senior Vice President, Madhya Pradesh Table Tennis Association (MPTTA)',
     icon: GraduationCap,
     color: 'bg-neutral-700',
-    bio: 'Mr. Jayesh brings deep expertise in sports ecosystem development and youth sports management. With extensive experience in building institutional sports frameworks, he advises Adexa Sports on program structuring, coach development, and creating pathways for student athletes. His guidance helps shape scalable sports programs that align with modern school curriculum requirements.',
-    tags: ['Sports Ecosystem', 'Youth Development', 'Curriculum'],
-    image: 'https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop',
+    bio: 'Mr. Jayesh Acharya brings strong leadership in competitive sports administration and grassroots development. His experience in shaping structured sporting pathways and institutional sports systems plays a key role in guiding Adexa Sports’ program design and implementation. He supports the development of structured school-based sports frameworks that bridge the gap between recreational play and professional training.',
+    tags: ['Sports Administration', 'Grassroots Development'],
+    image: '/Jayesh.jpeg',
   },
   {
-    name: 'Mr. Dudhal',
-    title: 'Advisor',
+    name: 'Dr. Sunil Dudhale',
+    title: 'Chief Physical Education Advisor',
+    subtitle: 'Retired Director of Physical Education, Devi Ahilya Vishwavidyalaya (DAVV)',
     icon: GraduationCap,
     color: 'bg-neutral-700',
-    bio: 'Mr. Dudhal contributes strategic insight in school partnership development and sports program implementation. With years of experience in educational institutions and youth development initiatives, he advises Adexa Sports on building long-term school relationships, stakeholder engagement, and creating sports cultures that support both academic excellence and physical development.',
-    tags: ['School Partnerships', 'Sports Management', 'Strategy'],
-    image: 'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400&h=500&fit=crop',
+    bio: 'Dr. Sunil Dudhale brings decades of experience in physical education and university-level sports development. His expertise reinforces Adexa Sports’ belief that strong athletic foundations are built during school years. He guides the creation of structured, research-backed physical education programs that promote lifelong fitness, teamwork, and holistic child development through disciplined and engaging training systems.',
+    tags: ['Physical Education', 'Program Design'],
+    image: '/dudhale.jpeg',
   },
 ];
 
@@ -65,7 +67,7 @@ export default function Leadership() {
               {/* Image */}
               <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px]">
                 <img
-                  src="https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=700&h=900&fit=crop"
+                  src="/rekha.jpeg"
                   alt="Rekha Punekar - Director of Sports"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -99,10 +101,10 @@ export default function Leadership() {
                 </div>
 
                 <p className="text-neutral-600 text-sm leading-relaxed mb-6">
-                  Rekha Punekar's journey from Madhya Pradesh to representing India reflects determination, discipline, resilience, and the true spirit of sportsmanship. Beginning her journey from Vidisha and moving to Indore in pursuit of better sporting opportunities, her story stands as a strong example of how structured guidance and access to quality sports development can transform lives.
+                  Rekha Punekar’s journey from Madhya Pradesh to representing India reflects determination, discipline, resilience, and the spirit of sportsmanship. She began her career in Vidisha and later moved to Indore in pursuit of better sporting opportunities. Her story stands as a strong example of how structured guidance and access to quality sports development can transform lives. With years of experience in competitive sports, athlete development, and sports leadership, she continues to strengthen Adexa Sports’ vision of creating meaningful sporting opportunities for students across schools.
                 </p>
                 <p className="text-neutral-600 text-sm leading-relaxed mb-6">
-                  Her years of experience in competitive sports, athlete development, and sports leadership continue to strengthen Adexa Sports' vision. Inspired by her journey, Adexa Sports aims to build a strong and inclusive sports ecosystem where every child receives access to quality physical education, professional sports coaching, and structured development pathways.
+                  Inspired by her journey and guided by her experience, Adexa Sports is committed to building an inclusive sports ecosystem where every child has access to quality physical education, professional coaching, and structured development pathways that empower them to grow physically, mentally, socially, and emotionally.
                 </p>
 
                 {/* Quote */}
@@ -148,7 +150,7 @@ export default function Leadership() {
                   {/* Content */}
                   <div className="p-5">
                     <h4 className="font-extrabold text-dark-900 text-lg mb-0.5">{member.name}</h4>
-                    <p className="text-primary-500 font-semibold text-xs mb-3">{member.title}</p>
+                    <p className="text-primary-500 font-semibold text-xs mb-3">{member.subtitle ? member.subtitle : member.title}</p>
                     <p className="text-neutral-500 text-xs leading-relaxed mb-4">{member.bio}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {member.tags.map((t) => (

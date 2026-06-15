@@ -15,7 +15,7 @@ const offerings = [
     subtitle: 'Trained Specialists',
     desc: 'Trained and professional sports coaches for smooth execution of sports and PE programs. Sports-specific guidance, structured session planning, and performance-oriented training.',
     tags: ['Sports Coaching', 'Session Planning', 'Performance Training'],
-    image: 'https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    image: '/1.png',
     accent: 'bg-accent-500',
   },
   {
@@ -24,7 +24,7 @@ const offerings = [
     subtitle: 'Data-driven Progress',
     desc: 'Structured assessments and reporting systems to track student participation, fitness growth, and skill development with parent-friendly report formats.',
     tags: ['Fitness Reports', 'Progress Tracking', 'Parent Reports'],
-    image: 'https://images.pexels.com/photos/2402777/pexels-photo-2402777.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    image: '/2.png',
     accent: 'bg-success-500',
   },
   {
@@ -33,7 +33,7 @@ const offerings = [
     subtitle: 'Infrastructure Guidance',
     desc: 'Assistance in identifying and providing quality sports equipment based on school requirements, student strength, and available infrastructure.',
     tags: ['Equipment Planning', 'Sports Setup', 'Inventory'],
-    image: 'https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    image: '/3.png',
     accent: 'bg-blue-500',
   },
   {
@@ -42,7 +42,7 @@ const offerings = [
     subtitle: 'End-to-End Management',
     desc: 'Day-to-day execution of sports activities within schools — from timetable coordination to event support and session monitoring.',
     tags: ['Timetable Coordination', 'Activity Planning', 'Event Support'],
-    image: 'https://images.pexels.com/photos/1618200/pexels-photo-1618200.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+    image: '/4.png',
     accent: 'bg-violet-500',
   },
 ];

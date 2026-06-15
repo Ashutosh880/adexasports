@@ -42,7 +42,7 @@ export default function Process() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-neutral-50 relative overflow-hidden">
+    <section id="process" className="py-20 lg:py-28 bg-neutral-50 relative overflow-hidden">
       <div className="absolute inset-0 bg-sports-pattern pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -97,7 +97,7 @@ export default function Process() {
               <div className="text-neutral-500 text-sm">Let's build a stronger sports culture at your school.</div>
             </div>
             <button
-              onClick={() => handleNav('#schedule')}
+              onClick={() => handleNav('#contact')}
               className="btn-primary flex-shrink-0"
             >
               Book a Free Consultation

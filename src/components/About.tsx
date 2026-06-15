@@ -3,8 +3,8 @@ import { CheckCircle2, ArrowRight } from 'lucide-react';
 const highlights = [
   'Complete sports ecosystem for schools',
   'Structured, age-appropriate curriculum',
-  'Trained sports professionals',
-  'Performance tracking & parent reports',
+  'Trained sports professionals & coaches',
+  'Fitness assessment & parent reporting',
   'Affordable, scalable programs',
   'Seamless integration with school timetables',
 ];
@@ -22,31 +22,37 @@ export default function About() {
           {/* Left: Image collage */}
           <div className="animate-on-scroll-left relative">
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-2xl overflow-hidden aspect-[3/4]">
+              <div className="rounded-2xl overflow-hidden aspect-square">
                 <img
-                  src="https://images.pexels.com/photos/1618200/pexels-photo-1618200.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
-                  alt="Students doing sports"
+                  src="/11.jpeg"
+                  alt="Sports program"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <div className="flex flex-col gap-3 mt-8">
-                <div className="rounded-2xl overflow-hidden aspect-square">
-                  <img
-                    src="https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
-                    alt="Coaching students"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="rounded-2xl overflow-hidden aspect-square">
-                  <img
-                    src="https://images.pexels.com/photos/2402777/pexels-photo-2402777.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop"
-                    alt="School sports"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
+              <div className="rounded-2xl overflow-hidden aspect-square">
+                <img
+                  src="/22.jpeg"
+                  alt="Students training"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-square">
+                <img
+                  src="/33.jpeg"
+                  alt="Coaching session"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden aspect-square">
+                <img
+                  src="/44.jpeg"
+                  alt="School sports"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
             </div>
 
@@ -78,10 +84,10 @@ export default function About() {
               <span className="text-gradient">Structured Ecosystem</span>
             </h2>
             <p className="text-neutral-600 mb-4 leading-relaxed">
-              At Adexa Sports, we believe that sports are not just extracurricular activities — they are an essential part of a student's overall growth and development. Children need physical activity, discipline, confidence, teamwork, leadership, and the ability to face challenges both on and off the field.
+              At Adexa Sports, we believe sports are not just extracurricular activities—they are an essential part of a student's overall growth and development. Through sports, students develop physical fitness, discipline, confidence, teamwork, leadership, and the ability to face challenges both on and off the field.
             </p>
             <p className="text-neutral-600 mb-8 leading-relaxed">
-              Founded with a vision to build structured and professionally managed sports programs for schools, we help educational institutions create a strong sporting culture through organized PE, trained coaches, modern curriculum, equipment support, and performance tracking. Many schools recognize the importance of sports, yet face challenges in execution, structure, and professional management. Adexa bridges this gap.
+              Founded with a vision to build structured and professionally managed sports programs for schools, we help educational institutions create a strong sporting culture through age-appropriate physical education, trained coaches, modern curriculum, equipment planning, fitness assessments, and performance tracking systems. While many schools recognize the importance of sports, they often face challenges in execution, consistency, and professional management. Adexa Sports bridges this gap through structured and scalable solutions.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-8">
