@@ -1,10 +1,26 @@
 import { Quote, Trophy, Award, Star, Briefcase, GraduationCap } from 'lucide-react';
+import { useState } from 'react';
 
 const achievements = [
   { icon: Trophy, label: 'Former International Women Cricketer of India' },
   { icon: Award, label: 'Vikram Awardee — Government of Madhya Pradesh' },
   { icon: Star, label: 'MPCA Roll of Honour Inductee' },
 ];
+
+function ExpandableBio({ name, bio }: { name: string; bio: string }) {
+  const [open, setOpen] = useState(false);
+  const short = bio.length > 240 ? `${bio.slice(0, 240)}...` : bio;
+  return (
+    <>
+      <p className="text-neutral-500 text-xs leading-relaxed mb-3">{open ? bio : short}</p>
+      {bio.length > 240 && (
+        <button onClick={() => setOpen((s) => !s)} className="text-primary-500 text-xs font-semibold mb-3 self-start">
+          {open ? 'Show less' : 'Read more'}
+        </button>
+      )}
+    </>
+  );
+}
 
 const advisors = [
   {
@@ -22,9 +38,7 @@ const advisors = [
     subtitle: 'Senior Vice President, Madhya Pradesh Table Tennis Association (MPTTA)',
     icon: GraduationCap,
     color: 'bg-neutral-700',
-    bio: `Mr. Jayesh Acharya brings strong leadership in competitive sports administration and grassroots development. His experience in shaping structured sporting pathways and institutional sports systems plays a key role in guiding Adexa Sports’ program design and implementation. He supports the development of structured school-based sports frameworks that bridge the gap between recreational play and professional training.
-
-At Adexa Sports, we believe true athletic excellence begins at the grassroots level. By introducing highly structured, premium sports programs directly into schools, we go far beyond just teaching games-we are actively building vital life skills, discipline, and the future champions of tomorrow. Our specialized curriculum bridges the critical gap between casual playtime and professional training.
+    bio: `At Adexa Sports, we believe true athletic excellence begins at the grassroots level. By introducing highly structured, premium sports programs directly into schools, we go far beyond just teaching games-we are actively building vital life skills, discipline, and the future champions of tomorrow. Our specialized curriculum bridges the critical gap between casual playtime and professional training.
 
 Through this elite foundation, we ensure that every single child discovers their inner potential, embraces lifelong fitness, and builds the confidence to succeed both on and off the field.`,
     tags: ['Sports Administration', 'Grassroots Development'],
@@ -36,10 +50,8 @@ Through this elite foundation, we ensure that every single child discovers their
     subtitle: 'Retired Director of Physical Education, Devi Ahilya Vishwavidyalaya (DAVV)',
     icon: GraduationCap,
     color: 'bg-neutral-700',
-    bio: `Dr. Sunil Dudhale brings decades of experience in physical education and university-level sports development. His expertise reinforces Adexa Sports’ belief that strong athletic foundations are built during school years. He guides the creation of structured, research-backed physical education programs that promote lifelong fitness, teamwork, and holistic child development through disciplined and engaging training systems.
-
-Decades of shaping university sports have taught me a vital truth: a robust athletic foundation must be built during the early school years. Physical education is the cornerstone of holistic child development and academic success, which is exactly why Adexa Sports is so urgently needed today. We deliver scientifically designed, rigorous PE programs that promote lifelong health, fitness, and teamwork.
-
+    bio: `Dr. Sunil Dudhale Decades of shaping university sports have taught me a vital truth: a robust athletic foundation must be built during the early school years. Physical education is the cornerstone of holistic child development and academic success, which is exactly why Adexa Sports is so urgently needed today. We deliver scientifically designed, rigorous PE programs that promote lifelong health, fitness, and teamwork.
+    
 By replacing unguided playtime with intentional training, we are transforming school sports into a highly structured, joy-filled learning experience for every student.`,
     tags: ['Physical Education', 'Program Design'],
     image: '/dudhale.jpeg',
@@ -133,45 +145,59 @@ export default function Leadership() {
 
         {/* Other team members */}
         <div className="stagger-parent grid grid-cols-1 md:grid-cols-3 gap-6">
-          {advisors.map((member) => {
-            const Icon = member.icon;
-            return (
-              <div key={member.name} className="stagger-child group">
-                <div className="bg-white rounded-3xl overflow-hidden border border-neutral-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300">
-                  {/* Image */}
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-900/50 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 ${member.color} rounded-full mb-1`}>
-                        <Icon size={11} className="text-white" />
-                        <span className="text-white text-[10px] font-bold">{member.title}</span>
+          {(() => {
+            const [expandedState, setExpandedState] = (() => {
+              // create a simple hook-like state container inside render scope
+              // we will lift actual state outside below
+              return [false, () => {}] as any;
+            })();
+            return advisors.map((member) => {
+              const Icon = member.icon;
+              return (
+                <div key={member.name} className="stagger-child group">
+                  <div className="bg-white rounded-3xl overflow-hidden border border-neutral-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 h-full flex flex-col">
+                    {/* Image */}
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-dark-900/50 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 ${member.color} rounded-full mb-1`}>
+                          <Icon size={11} className="text-white" />
+                          <span className="text-white text-[10px] font-bold">{member.title}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-5 flex-1 flex flex-col">
+                      <h4 className="font-extrabold text-dark-900 text-lg mb-0.5">{member.name}</h4>
+                      <p className="text-primary-500 font-semibold text-xs mb-3">{member.subtitle ? member.subtitle : member.title}</p>
+
+                      {/* Expandable bios for Jayesh and Dudhale */}
+                      {(['Mr. Jayesh Acharya', 'Dr. Sunil Dudhale'].includes(member.name)) ? (
+                        <ExpandableBio name={member.name} bio={member.bio} />
+                      ) : (
+                        <p className="text-neutral-500 text-xs leading-relaxed mb-3">{member.bio}</p>
+                      )}
+
+                      <div className="flex flex-wrap gap-1.5 mt-auto">
+                        {member.tags.map((t) => (
+                          <span key={t} className="px-2.5 py-0.5 bg-neutral-100 text-neutral-600 text-xs font-semibold rounded-full">
+                            {t}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-5">
-                    <h4 className="font-extrabold text-dark-900 text-lg mb-0.5">{member.name}</h4>
-                    <p className="text-primary-500 font-semibold text-xs mb-3">{member.subtitle ? member.subtitle : member.title}</p>
-                    <p className="text-neutral-500 text-xs leading-relaxed mb-4">{member.bio}</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {member.tags.map((t) => (
-                        <span key={t} className="px-2.5 py-0.5 bg-neutral-100 text-neutral-600 text-xs font-semibold rounded-full">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            });
+          })()}
         </div>
       </div>
     </section>
